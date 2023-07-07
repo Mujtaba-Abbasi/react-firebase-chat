@@ -2,11 +2,11 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../../pages/Login";
 import Register from "../../pages/Register";
 import ROUTES from "../../constants/navigation";
-import Home from "../../pages/Home";
 import { useContext, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { AuthContext } from "../../context/AuthContext";
+import Home from "../../pages/Home";
 
 interface IProtectedRouteProps {
   children: React.ReactElement;
