@@ -1,14 +1,14 @@
 import React from "react";
 import SidebarHeader from "../SidebarHeader/SidebarHeader";
 import Search from "../Search";
-import SidebarChats from "../SidebarChats";
+import Chats from "../Chats";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <SidebarHeader />
       <Search />
-      <SidebarChats />
+      <Chats />
     </div>
   );
 };
