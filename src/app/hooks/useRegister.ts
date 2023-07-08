@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase/firebase";
-import { ChangeEvent, useRef, useState } from "react";
+import { useState } from "react";
 import { IRegisterUserValues } from "../constants/types";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
