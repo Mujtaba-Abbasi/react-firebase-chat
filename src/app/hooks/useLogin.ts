@@ -15,7 +15,6 @@ const useLogin = () => {
   const navigate = useNavigate();
 
   const handleFormSubmit = async (values: ILogin) => {
-    console.log(values);
     try {
       setIsLoading(true);
       const { email, password } = values;
