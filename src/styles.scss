@@ -14,6 +14,8 @@
   }
 }
 
+//#2f2d52
+
 .formContainer {
   background-color: #a7bcff;
   height: 100vh;
@@ -114,7 +116,6 @@
     .sidebar {
       flex: 1;
       background-color: #3e3c61;
-      position: relative;
 
       .sidebar-header {
         display: flex;
@@ -244,6 +245,7 @@
 
       .chat-info {
         height: 50px;
+        width: 100%;
         background-color: #5d5b8d;
         display: flex;
         align-items: center;
@@ -268,6 +270,15 @@
         width: 100%;
         height: calc(100% - 160px);
         overflow-y: scroll;
+
+        .no-messages {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
         .message-time {
           font-size: 10px;
           font-weight: bold;
@@ -312,7 +323,7 @@
 
           &.owner {
             flex-direction: row-reverse;
-
+            padding: 0px 15px;
             .messageContent {
               align-items: flex-end;
               p {
@@ -332,9 +343,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
 
         input {
           width: 100%;
+
           border: none;
           outline: none;
           color: #2f2d52;
@@ -349,6 +362,7 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          margin: 15px;
 
           img {
             height: 24px;
