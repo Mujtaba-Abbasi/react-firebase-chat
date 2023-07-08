@@ -16,7 +16,7 @@ const Navigation = () => {
   const currentUser = useContext(AuthContext);
 
   const ProtectedRoute = ({ children }: IProtectedRouteProps) => {
-    if (!currentUser) {
+    if (!currentUser.uid) {
       return <Navigate to={ROUTES.LOGIN} replace />;
     }
     return children;
