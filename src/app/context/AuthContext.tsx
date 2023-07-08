@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }: IAuthContext) => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [currentUser.uid]);
   return (
     <AuthContext.Provider value={currentUser}>{children}</AuthContext.Provider>
   );
