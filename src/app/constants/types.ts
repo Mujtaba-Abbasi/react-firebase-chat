@@ -22,3 +22,15 @@ export interface ICurrentUser {
   // accessToken: string | null;
   refreshToken: string | null;
 }
+export interface IChatContextProvider {
+  children: React.ReactNode;
+}
+
+export interface IChatContext {
+  chatId: string;
+  user: {
+    displayName: string;
+    uid: string;
+    photoURL: string;
+  };
+}
