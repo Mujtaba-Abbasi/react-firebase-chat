@@ -17,10 +17,13 @@ const SidebarHeader = () => {
         <img src={currentUser.photo ? currentUser.photo : dummy} alt="avatar" />
         <span>{currentUser.displayName}</span>
         <button
-          onClick={async () => {
+          onClick={() => {
             try {
-              await signOut(auth);
-              navigate(ROUTES.LOGIN);
+              signOut(auth)
+                .then(() => {
+                  navigate(ROUTES.LOGIN);
+                })
+                .catch((error) => {});
             } catch (error) {
               console.log(error);
             }
