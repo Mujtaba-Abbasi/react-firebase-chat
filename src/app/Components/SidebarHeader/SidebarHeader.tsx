@@ -21,6 +21,7 @@ const SidebarHeader = () => {
             try {
               signOut(auth)
                 .then(() => {
+                  localStorage.removeItem("currentUser");
                   navigate(ROUTES.LOGIN);
                 })
                 .catch((error) => {});
