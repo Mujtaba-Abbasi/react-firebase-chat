@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { AuthContext } from "../../context/AuthContext";
 import Home from "../../pages/Home";
+import { decryptData } from "../../utils/encryption";
 
 interface IProtectedRouteProps {
   children: React.ReactElement;
@@ -14,9 +15,14 @@ interface IProtectedRouteProps {
 
 const Navigation = () => {
   const currentUser = useContext(AuthContext);
+  const storedUser = localStorage.getItem("currentUser");
+  let decryptedUser: any;
+  if (storedUser) {
+    decryptedUser = decryptData(storedUser);
+  }
 
   const ProtectedRoute = ({ children }: IProtectedRouteProps) => {
-    if (!currentUser.uid) {
+    if (currentUser === decryptedUser) {
       return <Navigate to={ROUTES.LOGIN} replace />;
     }
     return children;
