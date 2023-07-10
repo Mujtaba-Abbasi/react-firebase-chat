@@ -20,9 +20,11 @@ const Navigation = () => {
   if (storedUser) {
     decryptedUser = decryptData(storedUser);
   }
-
   const ProtectedRoute = ({ children }: IProtectedRouteProps) => {
-    if (currentUser === decryptedUser) {
+    const currentUserString = JSON.stringify(currentUser);
+    const decryptedUserString = JSON.stringify(decryptedUser);
+
+    if (currentUserString !== decryptedUserString) {
       return <Navigate to={ROUTES.LOGIN} replace />;
     }
     return children;
